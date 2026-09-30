@@ -1,202 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyForge - Study Smarter</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<title>StudyForge - Study Smarter</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #0b1020;
-            color: white;
-            line-height: 1.6;
-        }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        header {
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #252c45;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        .logo {
-            font-size: 26px;
-            font-weight: bold;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #0b1020;
+    color: white;
+    line-height: 1.6;
+}
 
-        .logo span {
-            color: #7c6cff;
-        }
+header {
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #252c45;
+    position: sticky;
+    top: 0;
+    background: #0b1020;
+    z-index: 100;
+}
 
-        nav a {
-            color: #c8cce0;
-            text-decoration: none;
-            margin-left: 25px;
-        }
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+}
 
-        nav a:hover {
-            color: white;
-        }
+.logo span,
+.hero h1 span {
+    color: #7c6cff;
+}
 
-        .hero {
-            text-align: center;
-            padding: 90px 20px 70px;
-            max-width: 900px;
-            margin: auto;
-        }
+nav a {
+    color: #c8cce0;
+    text-decoration: none;
+    margin-left: 22px;
+}
 
-        .hero h1 {
-            font-size: 58px;
-            margin-bottom: 20px;
-        }
+nav a:hover {
+    color: white;
+}
 
-        .hero h1 span {
-            color: #7c6cff;
-        }
+.hero {
+    text-align: center;
+    padding: 90px 20px 75px;
+    max-width: 950px;
+    margin: auto;
+}
 
-        .hero p {
-            color: #aeb5ce;
-            font-size: 19px;
-            max-width: 650px;
-            margin: auto;
-        }
+.hero h1 {
+    font-size: 58px;
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
 
-        .buttons {
-            margin-top: 35px;
-        }
+.hero p {
+    color: #aeb5ce;
+    font-size: 19px;
+    max-width: 680px;
+    margin: auto;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 14px 25px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 5px;
-        }
+.buttons {
+    margin-top: 35px;
+}
 
-        .primary {
-            background: #7c6cff;
-            color: white;
-        }
+.btn {
+    display: inline-block;
+    padding: 13px 23px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
 
-        .secondary {
-            border: 1px solid #39415f;
-            color: white;
-        }
+.primary {
+    background: #7c6cff;
+    color: white;
+}
 
-        .section {
-            padding: 60px 8%;
-            max-width: 1200px;
-            margin: auto;
-        }
+.primary:hover {
+    background: #6857eb;
+}
 
-        .section h2 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 40px;
-        }
+.secondary {
+    border: 1px solid #39415f;
+    color: white;
+    background: transparent;
+}
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+.section {
+    padding: 65px 7%;
+    max-width: 1250px;
+    margin: auto;
+}
 
-        .card {
-            background: #131a30;
-            border: 1px solid #252c45;
-            padding: 30px;
-            border-radius: 16px;
-            transition: 0.2s;
-        }
+.section h2 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 40px;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #7c6cff;
-        }
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
 
-        .icon {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
+.card {
+    background: #131a30;
+    border: 1px solid #252c45;
+    padding: 30px;
+    border-radius: 16px;
+    transition: 0.2s;
+}
 
-        .card h3 {
-            margin-bottom: 10px;
-        }
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #7c6cff;
+}
 
-        .card p {
-            color: #aeb5ce;
-        }
+.icon {
+    font-size: 34px;
+    margin-bottom: 14px;
+}
 
-        .subjects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
+.card h3 {
+    margin-bottom: 10px;
+}
 
-        .subject {
-            background: #131a30;
-            border: 1px solid #252c45;
-            padding: 12px 20px;
-            border-radius: 30px;
-            color: #d8dcf0;
-        }
+.card p {
+    color: #aeb5ce;
+}
 
-        .cta {
-            text-align: center;
-            background: #131a30;
-            border-radius: 20px;
-            padding: 50px 20px;
-            margin-top: 30px;
-        }
+/* GENERAL TOOL BOX */
 
-        footer {
-            text-align: center;
-            padding: 35px;
-            color: #777f9c;
-            border-top: 1px solid #252c45;
-            margin-top: 60px;
-        }
+.tool-box {
+    background: #131a30;
+    border: 1px solid #252c45;
+    border-radius: 20px;
+    padding: 35px;
+    max-width: 900px;
+    margin: auto;
+}
 
-        @media (max-width: 800px) {
-            .features {
-                grid-template-columns: 1fr;
-            }
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    margin: 8px 0 14px;
+    background: #0b1020;
+    color: white;
+    border: 1px solid #39415f;
+    border-radius: 9px;
+    font-size: 15px;
+}
 
-            .hero h1 {
-                font-size: 42px;
-            }
+label {
+    color: #c8cce0;
+    font-weight: bold;
+}
 
-            nav {
-                display: none;
-            }
-        }
-    </style>
+/* QUIZ */
+
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.quiz-options select {
+    margin-bottom: 5px;
+}
+
+.question {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 25px 0 20px;
+}
+
+.answers {
+    display: grid;
+    gap: 12px;
+}
+
+.answer {
+    background: #0b1020;
+    color: white;
+    border: 1px solid #39415f;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.answer:hover {
+    border-color: #7c6cff;
+}
+
+.answer.correct {
+    background: #123b2b;
+    border-color: #36d98a;
+}
+
+.answer.wrong {
+    background: #3b1c25;
+    border-color: #ff6262;
+}
+
+.quiz-info {
+    display: flex;
+    justify-content: space-between;
+    color: #aeb5ce;
+}
+
+.score-big {
+    font-size: 55px;
+    font-weight: bold;
+    color: #7c6cff;
+    text-align: center;
+    margin: 15px;
+}
+
+.center {
+    text-align: center;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.time-card {
+    background: #0b1020;
+    border: 1px solid #252c45;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.time-card strong {
+    display: block;
+    font-size: 32px;
+    color: #7c6cff;
+}
+
+.time-card span {
+    color: #aeb5ce;
+}
+
+/* PLANNER */
+
+.planner-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 10px;
+    align-items: end;
+}
+
+.plan-list {
+    margin-top: 25px;
+}
+
+.plan-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0b1020;
+    border: 1px solid #252c45;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.plan-item small {
+    color: #aeb5ce;
+}
+
+.delete-btn {
+    background: #3b1c25;
+    border: 1px solid #ff6262;
+    color: white;
+    padding: 7px 12px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+/* HISTORY */
+
+.history-item {
+    background: #0b1020;
+    border: 1px solid #252c45;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.empty {
+    color: #8f96ad;
+    text-align: center;
+    padding: 20px;
+}
+
+/* SUBJECTS */
+
+.subjects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.subject {
+    background: #131a30;
+    border: 1px solid #252c45;
+    padding: 12px 20px;
+    border-radius: 30px;
+    color: #d8dcf0;
+    cursor: pointer;
+}
+
+.subject:hover {
+    border-color: #7c6cff;
+}
+
+.topic-content {
+    margin-top: 30px;
+    background: #0b1020;
+    border: 1px solid #252c45;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.topic-content h3 {
+    margin-bottom: 10px;
+    color: #7c6cff;
+}
+
+.topic-content p {
+    color: #b7bdd1;
+}
+
+/* CTA */
+
+.cta {
+    text-align: center;
+    background: #131a30;
+    border-radius: 20px;
+    padding: 50px 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 35px;
+    color: #777f9c;
+    border-top: 1px solid #252c45;
+    margin-top: 50px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 800px) {
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .quiz-options,
+    .planner-form {
+        grid-template-columns: 1fr;
+    }
+
+    .countdown {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tool-box {
+        padding: 22px;
+    }
+}
+</style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-    <div class="logo">Study<span>Forge</span></div>
+
+    <div class="logo">
+        Study<span>Forge</span>
+    </div>
 
     <nav>
         <a href="#features">Features</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#countdown">Countdown</a>
+        <a href="#planner">Planner</a>
         <a href="#subjects">Subjects</a>
-        <a href="#start">Get Started</a>
     </nav>
+
 </header>
 
+
+<!-- HERO -->
+
 <section class="hero">
-    <h1>Study <span>smarter.</span><br>Prepare better.</h1>
+
+    <h1>
+        Study <span>smarter.</span><br>
+        Prepare better.
+    </h1>
 
     <p>
         Free study tools designed to help students practise,
@@ -204,10 +454,21 @@
     </p>
 
     <div class="buttons">
-        <a class="btn primary" href="#features">Explore Tools</a>
-        <a class="btn secondary" href="#subjects">View Subjects</a>
+
+        <a class="btn primary" href="#quiz">
+            📝 Start a Quiz
+        </a>
+
+        <a class="btn secondary" href="#planner">
+            📚 Make a Study Plan
+        </a>
+
     </div>
+
 </section>
+
+
+<!-- FEATURES -->
 
 <section class="section" id="features">
 
@@ -217,10 +478,10 @@
 
         <div class="card">
             <div class="icon">📝</div>
-            <h3>Practice Quizzes</h3>
+            <h3>Quiz Generator</h3>
             <p>
-                Test yourself with topic-based questions
-                and see your score instantly.
+                Choose a subject and topic, answer questions,
+                and instantly see your score.
             </p>
         </div>
 
@@ -228,8 +489,8 @@
             <div class="icon">📅</div>
             <h3>Exam Countdown</h3>
             <p>
-                Keep track of your upcoming exams and
-                know exactly how much time you have left.
+                Enter your exam date and see exactly how
+                much time you have left.
             </p>
         </div>
 
@@ -237,51 +498,1366 @@
             <div class="icon">📚</div>
             <h3>Study Planner</h3>
             <p>
-                Organise your subjects and create a clear
-                revision plan for your exams.
+                Add subjects and topics and organise your
+                revision into a simple plan.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏆</div>
+            <h3>Score History</h3>
+            <p>
+                Your quiz results are saved automatically
+                so you can track your progress.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔍</div>
+            <h3>Subject Guides</h3>
+            <p>
+                Find useful revision information and
+                topic explanations for different subjects.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🚀</div>
+            <h3>Free Forever</h3>
+            <p>
+                StudyForge is designed to give students
+                useful study tools without unnecessary costs.
             </p>
         </div>
 
     </div>
+
 </section>
 
-<section class="section" id="subjects">
 
-    <h2>Subjects</h2>
+<!-- QUIZ GENERATOR -->
 
-    <div class="subjects">
-        <div class="subject">Mathematics</div>
-        <div class="subject">Business</div>
-        <div class="subject">English</div>
-        <div class="subject">Spanish</div>
-        <div class="subject">History</div>
-        <div class="subject">Environmental Management</div>
-        <div class="subject">Science</div>
+<section class="section" id="quiz">
+
+    <h2>📝 Quiz Generator</h2>
+
+    <div class="tool-box">
+
+        <div id="quizStart">
+
+            <h3>Choose your subject and topic</h3>
+
+            <div class="quiz-options">
+
+                <div>
+                    <label>Subject</label>
+
+                    <select id="quizSubject" onchange="updateTopics()">
+
+                        <option value="maths">
+                            Mathematics
+                        </option>
+
+                        <option value="business">
+                            Business
+                        </option>
+
+                        <option value="english">
+                            English
+                        </option>
+
+                        <option value="history">
+                            History
+                        </option>
+
+                    </select>
+                </div>
+
+                <div>
+                    <label>Topic</label>
+
+                    <select id="quizTopic"></select>
+                </div>
+
+            </div>
+
+            <button class="btn primary" onclick="startQuiz()">
+                Start Quiz
+            </button>
+
+        </div>
+
+
+        <div id="quizGame" class="hidden">
+
+            <div class="quiz-info">
+
+                <span id="questionNumber">
+                    Question 1 of 5
+                </span>
+
+                <span id="quizScore">
+                    Score: 0
+                </span>
+
+            </div>
+
+            <div class="question" id="questionText"></div>
+
+            <div class="answers" id="answers"></div>
+
+        </div>
+
+
+        <div id="quizResult" class="hidden center">
+
+            <h3>🎉 Quiz Complete!</h3>
+
+            <div class="score-big" id="finalScore"></div>
+
+            <p id="resultMessage"></p>
+
+            <button class="btn primary" onclick="restartQuiz()">
+                Try Again
+            </button>
+
+        </div>
+
     </div>
 
 </section>
 
-<section class="section" id="start">
+
+<!-- EXAM COUNTDOWN -->
+
+<section class="section" id="countdown">
+
+    <h2>📅 Exam Countdown</h2>
+
+    <div class="tool-box">
+
+        <label>Exam name</label>
+
+        <input
+            type="text"
+            id="examName"
+            placeholder="e.g. Mathematics Exam"
+        >
+
+        <label>Exam date</label>
+
+        <input
+            type="date"
+            id="examDate"
+        >
+
+        <button
+            class="btn primary"
+            onclick="setCountdown()"
+        >
+            Set Countdown
+        </button>
+
+        <div id="countdownArea" class="hidden">
+
+            <h3 id="countdownTitle" class="center"></h3>
+
+            <div class="countdown">
+
+                <div class="time-card">
+                    <strong id="days">0</strong>
+                    <span>Days</span>
+                </div>
+
+                <div class="time-card">
+                    <strong id="hours">0</strong>
+                    <span>Hours</span>
+                </div>
+
+                <div class="time-card">
+                    <strong id="minutes">0</strong>
+                    <span>Minutes</span>
+                </div>
+
+                <div class="time-card">
+                    <strong id="seconds">0</strong>
+                    <span>Seconds</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STUDY PLANNER -->
+
+<section class="section" id="planner">
+
+    <h2>📚 Study Planner</h2>
+
+    <div class="tool-box">
+
+        <h3>Add something to your revision plan</h3>
+
+        <div class="planner-form">
+
+            <div>
+
+                <label>Subject</label>
+
+                <input
+                    type="text"
+                    id="planSubject"
+                    placeholder="Mathematics"
+                >
+
+            </div>
+
+            <div>
+
+                <label>Topic</label>
+
+                <input
+                    type="text"
+                    id="planTopic"
+                    placeholder="Algebra"
+                >
+
+            </div>
+
+            <button
+                class="btn primary"
+                onclick="addPlan()"
+            >
+                Add
+            </button>
+
+        </div>
+
+        <div id="planList" class="plan-list"></div>
+
+    </div>
+
+</section>
+
+
+<!-- SCORE HISTORY -->
+
+<section class="section" id="history">
+
+    <h2>🏆 Score History</h2>
+
+    <div class="tool-box">
+
+        <div id="historyList"></div>
+
+        <div class="center">
+
+            <button
+                class="btn secondary"
+                onclick="clearHistory()"
+            >
+                Clear History
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SUBJECT GUIDES -->
+
+<section class="section" id="subjects">
+
+    <h2>🔍 Subject & Topic Guides</h2>
+
+    <div class="subjects">
+
+        <div
+            class="subject"
+            onclick="showTopic('Mathematics')"
+        >
+            Mathematics
+        </div>
+
+        <div
+            class="subject"
+            onclick="showTopic('Business')"
+        >
+            Business
+        </div>
+
+        <div
+            class="subject"
+            onclick="showTopic('English')"
+        >
+            English
+        </div>
+
+        <div
+            class="subject"
+            onclick="showTopic('History')"
+        >
+            History
+        </div>
+
+        <div
+            class="subject"
+            onclick="showTopic('Spanish')"
+        >
+            Spanish
+        </div>
+
+        <div
+            class="subject"
+            onclick="showTopic('Environmental Management')"
+        >
+            Environmental Management
+        </div>
+
+    </div>
+
+    <div
+        id="topicContent"
+        class="topic-content hidden"
+    ></div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="section">
 
     <div class="cta">
 
-        <h2>Ready to start studying?</h2>
+        <h2>Ready to study smarter?</h2>
 
         <p style="color:#aeb5ce; margin:15px 0 25px;">
-            More free study tools are coming soon.
+            Pick a tool above and start studying.
         </p>
 
-        <a class="btn primary" href="#features">
-            Start Exploring
+        <a
+            class="btn primary"
+            href="#quiz"
+        >
+            Start Your First Quiz
         </a>
 
     </div>
 
 </section>
 
+
 <footer>
+
     © 2026 StudyForge · Free tools for students
+
 </footer>
+
+
+<script>
+
+/* =========================
+   QUIZ QUESTIONS
+========================= */
+
+const questionBank = {
+
+    maths: {
+
+        Algebra: [
+            {
+                q: "If 3x = 18, what is x?",
+                a: ["3", "6", "9", "12"],
+                correct: 1
+            },
+            {
+                q: "Simplify: 2x + 3x",
+                a: ["5", "5x", "6x", "x"],
+                correct: 1
+            },
+            {
+                q: "What is 4²?",
+                a: ["8", "12", "16", "20"],
+                correct: 2
+            },
+            {
+                q: "If x + 7 = 15, what is x?",
+                a: ["6", "7", "8", "9"],
+                correct: 2
+            },
+            {
+                q: "Expand: 2(x + 3)",
+                a: ["2x + 3", "2x + 5", "2x + 6", "x + 6"],
+                correct: 2
+            }
+        ],
+
+        Surds: [
+            {
+                q: "What is √25?",
+                a: ["3", "4", "5", "6"],
+                correct: 2
+            },
+            {
+                q: "Simplify √16.",
+                a: ["2", "4", "6", "8"],
+                correct: 1
+            },
+            {
+                q: "What is √9 × √4?",
+                a: ["6", "8", "12", "13"],
+                correct: 0
+            },
+            {
+                q: "Which number is irrational?",
+                a: ["4", "9", "√2", "16"],
+                correct: 2
+            },
+            {
+                q: "What is √36?",
+                a: ["4", "5", "6", "7"],
+                correct: 2
+            }
+        ],
+
+        "Number": [
+            {
+                q: "What is 15 × 4?",
+                a: ["45", "50", "60", "75"],
+                correct: 2
+            },
+            {
+                q: "What is 144 ÷ 12?",
+                a: ["10", "11", "12", "14"],
+                correct: 2
+            },
+            {
+                q: "What is 25% of 100?",
+                a: ["10", "20", "25", "50"],
+                correct: 2
+            },
+            {
+                q: "Which is a prime number?",
+                a: ["9", "15", "17", "21"],
+                correct: 2
+            },
+            {
+                q: "What is 2³?",
+                a: ["6", "8", "9", "12"],
+                correct: 1
+            }
+        ]
+
+    },
+
+    business: {
+
+        "Business Objectives": [
+            {
+                q: "What is one common objective of a business?",
+                a: [
+                    "Making a loss",
+                    "Survival",
+                    "Avoiding customers",
+                    "Reducing all sales"
+                ],
+                correct: 1
+            },
+            {
+                q: "What does profit mean?",
+                a: [
+                    "Revenue minus costs",
+                    "Costs minus revenue",
+                    "Total sales only",
+                    "Number of employees"
+                ],
+                correct: 0
+            },
+            {
+                q: "Which is a financial objective?",
+                a: [
+                    "Profit maximisation",
+                    "Making friends",
+                    "Increasing homework",
+                    "Reducing lessons"
+                ],
+                correct: 0
+            },
+            {
+                q: "What does survival mean as a business objective?",
+                a: [
+                    "Closing immediately",
+                    "Continuing to operate",
+                    "Making no sales",
+                    "Having no workers"
+                ],
+                correct: 1
+            },
+            {
+                q: "Which objective focuses on increasing the size of a business?",
+                a: [
+                    "Growth",
+                    "Closure",
+                    "Reduction",
+                    "Unemployment"
+                ],
+                correct: 0
+            }
+        ],
+
+        "Sectors of Production": [
+            {
+                q: "Which sector involves extracting natural resources?",
+                a: [
+                    "Primary",
+                    "Secondary",
+                    "Tertiary",
+                    "Quaternary"
+                ],
+                correct: 0
+            },
+            {
+                q: "Manufacturing is usually part of which sector?",
+                a: [
+                    "Primary",
+                    "Secondary",
+                    "Tertiary",
+                    "None"
+                ],
+                correct: 1
+            },
+            {
+                q: "Which sector provides services?",
+                a: [
+                    "Primary",
+                    "Secondary",
+                    "Tertiary",
+                    "Mining"
+                ],
+                correct: 2
+            },
+            {
+                q: "Fishing belongs mainly to which sector?",
+                a: [
+                    "Primary",
+                    "Secondary",
+                    "Tertiary",
+                    "Service"
+                ],
+                correct: 0
+            },
+            {
+                q: "A restaurant is mainly part of which sector?",
+                a: [
+                    "Primary",
+                    "Secondary",
+                    "Tertiary",
+                    "Mining"
+                ],
+                correct: 2
+            }
+        ],
+
+        "Business Organisations": [
+            {
+                q: "Who owns a sole trader business?",
+                a: [
+                    "One person",
+                    "The government",
+                    "A board of 100 people",
+                    "Nobody"
+                ],
+                correct: 0
+            },
+            {
+                q: "What is a partnership?",
+                a: [
+                    "A business owned by two or more people",
+                    "A government department",
+                    "A charity only",
+                    "A school"
+                ],
+                correct: 0
+            },
+            {
+                q: "What does Ltd usually indicate?",
+                a: [
+                    "Limited company",
+                    "Large trade department",
+                    "Local transport division",
+                    "Long-term debt"
+                ],
+                correct: 0
+            },
+            {
+                q: "What is a shareholder?",
+                a: [
+                    "A customer",
+                    "A person who owns shares",
+                    "A supplier only",
+                    "An employee only"
+                ],
+                correct: 1
+            },
+            {
+                q: "Which organisation can sell shares to the public?",
+                a: [
+                    "Sole trader",
+                    "Partnership",
+                    "Public limited company",
+                    "Informal club"
+                ],
+                correct: 2
+            }
+        ]
+
+    },
+
+    english: {
+
+        "Grammar": [
+            {
+                q: "Which word is a noun?",
+                a: ["Quickly", "Beautiful", "School", "Run"],
+                correct: 2
+            },
+            {
+                q: "Which sentence is in the past tense?",
+                a: [
+                    "She walks home.",
+                    "She walked home.",
+                    "She is walking home.",
+                    "She will walk home."
+                ],
+                correct: 1
+            },
+            {
+                q: "Which word is an adjective?",
+                a: ["Quickly", "Beautiful", "Run", "School"],
+                correct: 1
+            },
+            {
+                q: "Which punctuation mark ends a question?",
+                a: [".", "!", ",", "?"],
+                correct: 3
+            },
+            {
+                q: "Which is a pronoun?",
+                a: ["Table", "Quick", "They", "Jump"],
+                correct: 2
+            }
+        ],
+
+        "Descriptive Writing": [
+            {
+                q: "What is an important feature of descriptive writing?",
+                a: [
+                    "Sensory details",
+                    "Only numbers",
+                    "No adjectives",
+                    "Only dialogue"
+                ],
+                correct: 0
+            },
+            {
+                q: "Which sense is used by the word 'fragrant'?",
+                a: ["Sight", "Smell", "Hearing", "Touch"],
+                correct: 1
+            },
+            {
+                q: "What can imagery help a writer do?",
+                a: [
+                    "Create a clear picture",
+                    "Remove all description",
+                    "Avoid details",
+                    "Make writing shorter"
+                ],
+                correct: 0
+            },
+            {
+                q: "Which is an example of personification?",
+                a: [
+                    "The wind whispered.",
+                    "The car is red.",
+                    "He ran quickly.",
+                    "The box is heavy."
+                ],
+                correct: 0
+            },
+            {
+                q: "What does atmosphere describe?",
+                a: [
+                    "The mood or feeling of a place",
+                    "The number of paragraphs",
+                    "The spelling",
+                    "The page number"
+                ],
+                correct: 0
+            }
+        ]
+
+    },
+
+    history: {
+
+        "General History": [
+            {
+                q: "Which source was created during the time being studied?",
+                a: [
+                    "Primary source",
+                    "Secondary source",
+                    "Modern opinion",
+                    "Future source"
+                ],
+                correct: 0
+            },
+            {
+                q: "What is chronology?",
+                a: [
+                    "Ordering events by time",
+                    "Studying geography",
+                    "Counting people",
+                    "Writing fiction"
+                ],
+                correct: 0
+            },
+            {
+                q: "What is a historian?",
+                a: [
+                    "Someone who studies the past",
+                    "Someone who predicts weather",
+                    "A type of scientist only",
+                    "A politician"
+                ],
+                correct: 0
+            },
+            {
+                q: "Which is an example of a primary source?",
+                a: [
+                    "A diary from the period",
+                    "A modern textbook",
+                    "A recent documentary",
+                    "A modern website"
+                ],
+                correct: 0
+            },
+            {
+                q: "Why do historians compare sources?",
+                a: [
+                    "To examine different evidence",
+                    "To make sources disappear",
+                    "To avoid evidence",
+                    "To change dates"
+                ],
+                correct: 0
+            }
+        ]
+
+    }
+
+};
+
+
+/* =========================
+   QUIZ SYSTEM
+========================= */
+
+let currentQuestions = [];
+let currentQuestion = 0;
+let currentScore = 0;
+let selectedSubject = "";
+let selectedTopic = "";
+
+function updateTopics() {
+
+    const subject = document.getElementById("quizSubject").value;
+    const topicSelect = document.getElementById("quizTopic");
+
+    topicSelect.innerHTML = "";
+
+    Object.keys(questionBank[subject]).forEach(topic => {
+
+        const option = document.createElement("option");
+
+        option.value = topic;
+        option.textContent = topic;
+
+        topicSelect.appendChild(option);
+
+    });
+}
+
+updateTopics();
+
+
+function startQuiz() {
+
+    selectedSubject =
+        document.getElementById("quizSubject").value;
+
+    selectedTopic =
+        document.getElementById("quizTopic").value;
+
+    currentQuestions =
+        [...questionBank[selectedSubject][selectedTopic]]
+        .sort(() => Math.random() - 0.5);
+
+    currentQuestion = 0;
+    currentScore = 0;
+
+    document.getElementById("quizStart")
+        .classList.add("hidden");
+
+    document.getElementById("quizResult")
+        .classList.add("hidden");
+
+    document.getElementById("quizGame")
+        .classList.remove("hidden");
+
+    showQuestion();
+}
+
+
+function showQuestion() {
+
+    const question =
+        currentQuestions[currentQuestion];
+
+    document.getElementById("questionNumber")
+        .textContent =
+        `Question ${currentQuestion + 1} of ${currentQuestions.length}`;
+
+    document.getElementById("quizScore")
+        .textContent =
+        `Score: ${currentScore}`;
+
+    document.getElementById("questionText")
+        .textContent = question.q;
+
+    const answers =
+        document.getElementById("answers");
+
+    answers.innerHTML = "";
+
+    question.a.forEach((answer, index) => {
+
+        const button =
+            document.createElement("button");
+
+        button.className = "answer";
+        button.textContent = answer;
+
+        button.onclick =
+            () => checkAnswer(index, button);
+
+        answers.appendChild(button);
+
+    });
+}
+
+
+function checkAnswer(index, button) {
+
+    const question =
+        currentQuestions[currentQuestion];
+
+    const allButtons =
+        document.querySelectorAll(".answer");
+
+    allButtons.forEach(btn => {
+        btn.disabled = true;
+    });
+
+    if (index === question.correct) {
+
+        button.classList.add("correct");
+        currentScore++;
+
+    } else {
+
+        button.classList.add("wrong");
+
+        allButtons[question.correct]
+            .classList.add("correct");
+    }
+
+    document.getElementById("quizScore")
+        .textContent =
+        `Score: ${currentScore}`;
+
+    setTimeout(() => {
+
+        currentQuestion++;
+
+        if (currentQuestion < currentQuestions.length) {
+
+            showQuestion();
+
+        } else {
+
+            finishQuiz();
+
+        }
+
+    }, 800);
+}
+
+
+function finishQuiz() {
+
+    document.getElementById("quizGame")
+        .classList.add("hidden");
+
+    document.getElementById("quizResult")
+        .classList.remove("hidden");
+
+    document.getElementById("finalScore")
+        .textContent =
+        `${currentScore}/${currentQuestions.length}`;
+
+    let message = "";
+
+    const percentage =
+        (currentScore / currentQuestions.length) * 100;
+
+    if (percentage === 100) {
+        message = "🔥 Perfect score! Amazing work.";
+    } else if (percentage >= 80) {
+        message = "👏 Excellent work!";
+    } else if (percentage >= 60) {
+        message = "👍 Good job! Keep practising.";
+    } else {
+        message = "💪 Keep practising and try again.";
+    }
+
+    document.getElementById("resultMessage")
+        .textContent = message;
+
+    saveScore();
+
+    loadHistory();
+}
+
+
+function restartQuiz() {
+
+    document.getElementById("quizResult")
+        .classList.add("hidden");
+
+    document.getElementById("quizStart")
+        .classList.remove("hidden");
+}
+
+
+/* =========================
+   SCORE HISTORY
+========================= */
+
+function saveScore() {
+
+    const history =
+        JSON.parse(
+            localStorage.getItem("studyforgeScores") || "[]"
+        );
+
+    history.unshift({
+
+        subject:
+            document.getElementById("quizSubject")
+            .selectedOptions[0].text,
+
+        topic: selectedTopic,
+
+        score: currentScore,
+
+        total: currentQuestions.length,
+
+        date: new Date().toLocaleDateString()
+
+    });
+
+    localStorage.setItem(
+        "studyforgeScores",
+        JSON.stringify(history.slice(0, 20))
+    );
+}
+
+
+function loadHistory() {
+
+    const history =
+        JSON.parse(
+            localStorage.getItem("studyforgeScores") || "[]"
+        );
+
+    const container =
+        document.getElementById("historyList");
+
+    container.innerHTML = "";
+
+    if (history.length === 0) {
+
+        container.innerHTML =
+            `<div class="empty">
+                Complete a quiz and your scores will appear here.
+            </div>`;
+
+        return;
+    }
+
+    history.forEach(item => {
+
+        const div =
+            document.createElement("div");
+
+        div.className = "history-item";
+
+        div.innerHTML = `
+            <div>
+                <strong>${item.subject}</strong>
+                <br>
+                <small>${item.topic} · ${item.date}</small>
+            </div>
+
+            <strong>
+                ${item.score}/${item.total}
+            </strong>
+        `;
+
+        container.appendChild(div);
+
+    });
+}
+
+
+function clearHistory() {
+
+    localStorage.removeItem("studyforgeScores");
+
+    loadHistory();
+}
+
+loadHistory();
+
+
+/* =========================
+   EXAM COUNTDOWN
+========================= */
+
+let countdownInterval;
+
+function setCountdown() {
+
+    const name =
+        document.getElementById("examName").value.trim();
+
+    const date =
+        document.getElementById("examDate").value;
+
+    if (!name || !date) {
+
+        alert("Please enter an exam name and date.");
+
+        return;
+    }
+
+    localStorage.setItem(
+        "studyforgeExam",
+        JSON.stringify({
+            name: name,
+            date: date
+        })
+    );
+
+    startCountdown(name, date);
+}
+
+
+function startCountdown(name, date) {
+
+    clearInterval(countdownInterval);
+
+    document.getElementById("countdownArea")
+        .classList.remove("hidden");
+
+    document.getElementById("countdownTitle")
+        .textContent = name;
+
+    function updateCountdown() {
+
+        const target =
+            new Date(date + "T23:59:59").getTime();
+
+        const now =
+            new Date().getTime();
+
+        const difference =
+            target - now;
+
+        if (difference <= 0) {
+
+            document.getElementById("days").textContent = "0";
+            document.getElementById("hours").textContent = "0";
+            document.getElementById("minutes").textContent = "0";
+            document.getElementById("seconds").textContent = "0";
+
+            document.getElementById("countdownTitle")
+                .textContent =
+                name + " — The exam is here!";
+
+            clearInterval(countdownInterval);
+
+            return;
+        }
+
+        const days =
+            Math.floor(
+                difference / (1000 * 60 * 60 * 24)
+            );
+
+        const hours =
+            Math.floor(
+                (difference / (1000 * 60 * 60)) % 24
+            );
+
+        const minutes =
+            Math.floor(
+                (difference / (1000 * 60)) % 60
+            );
+
+        const seconds =
+            Math.floor(
+                (difference / 1000) % 60
+            );
+
+        document.getElementById("days")
+            .textContent = days;
+
+        document.getElementById("hours")
+            .textContent = hours;
+
+        document.getElementById("minutes")
+            .textContent = minutes;
+
+        document.getElementById("seconds")
+            .textContent = seconds;
+    }
+
+    updateCountdown();
+
+    countdownInterval =
+        setInterval(updateCountdown, 1000);
+}
+
+
+function loadCountdown() {
+
+    const saved =
+        JSON.parse(
+            localStorage.getItem("studyforgeExam")
+        );
+
+    if (!saved) return;
+
+    document.getElementById("examName")
+        .value = saved.name;
+
+    document.getElementById("examDate")
+        .value = saved.date;
+
+    startCountdown(saved.name, saved.date);
+}
+
+loadCountdown();
+
+
+/* =========================
+   STUDY PLANNER
+========================= */
+
+function addPlan() {
+
+    const subject =
+        document.getElementById("planSubject")
+        .value.trim();
+
+    const topic =
+        document.getElementById("planTopic")
+        .value.trim();
+
+    if (!subject || !topic) {
+
+        alert("Please enter both a subject and topic.");
+
+        return;
+    }
+
+    const plans =
+        JSON.parse(
+            localStorage.getItem("studyforgePlans") || "[]"
+        );
+
+    plans.push({
+        subject: subject,
+        topic: topic
+    });
+
+    localStorage.setItem(
+        "studyforgePlans",
+        JSON.stringify(plans)
+    );
+
+    document.getElementById("planSubject").value = "";
+    document.getElementById("planTopic").value = "";
+
+    loadPlans();
+}
+
+
+function loadPlans() {
+
+    const plans =
+        JSON.parse(
+            localStorage.getItem("studyforgePlans") || "[]"
+        );
+
+    const list =
+        document.getElementById("planList");
+
+    list.innerHTML = "";
+
+    if (plans.length === 0) {
+
+        list.innerHTML =
+            `<div class="empty">
+                Your study plan is empty. Add your first topic above.
+            </div>`;
+
+        return;
+    }
+
+    plans.forEach((plan, index) => {
+
+        const item =
+            document.createElement("div");
+
+        item.className = "plan-item";
+
+        item.innerHTML = `
+            <div>
+                <strong>${plan.subject}</strong>
+                <br>
+                <small>${plan.topic}</small>
+            </div>
+
+            <button
+                class="delete-btn"
+                onclick="deletePlan(${index})"
+            >
+                Delete
+            </button>
+        `;
+
+        list.appendChild(item);
+
+    });
+}
+
+
+function deletePlan(index) {
+
+    const plans =
+        JSON.parse(
+            localStorage.getItem("studyforgePlans") || "[]"
+        );
+
+    plans.splice(index, 1);
+
+    localStorage.setItem(
+        "studyforgePlans",
+        JSON.stringify(plans)
+    );
+
+    loadPlans();
+}
+
+loadPlans();
+
+
+/* =========================
+   SUBJECT GUIDES
+========================= */
+
+const guides = {
+
+    Mathematics: {
+        title: "Mathematics Revision",
+        text:
+        "Practise algebra, numbers, surds, equations, graphs and problem-solving. Show your working clearly and check your answers."
+    },
+
+    Business: {
+        title: "Business Revision",
+        text:
+        "Revise business objectives, stakeholders, sectors of production, business organisations, enterprise and business growth. Try to use real business examples when answering longer questions."
+    },
+
+    English: {
+        title: "English Revision",
+        text:
+        "For English, practise analysing language, structure and effects. For descriptive writing, use sensory details, varied sentence structures, precise vocabulary and a clear atmosphere."
+    },
+
+    History: {
+        title: "History Revision",
+        text:
+        "When revising History, focus on causes, consequences, significance and change over time. Use evidence from sources and remember to distinguish primary and secondary sources."
+    },
+
+    Spanish: {
+        title: "Spanish Revision",
+        text:
+        "Practise basic vocabulary, verb conjugations, articles, gender, adjectives and common phrases. Regular short practice sessions can help improve recall."
+    },
+
+    "Environmental Management": {
+        title: "Environmental Management Revision",
+        text:
+        "Revise natural resources, mining, damaged landscapes, pollution, conservation and methods of managing environmental impacts. Learn both causes and possible management strategies."
+    }
+
+};
+
+
+function showTopic(subject) {
+
+    const content =
+        document.getElementById("topicContent");
+
+    const guide = guides[subject];
+
+    content.classList.remove("hidden");
+
+    content.innerHTML = `
+        <h3>${guide.title}</h3>
+        <p>${guide.text}</p>
+    `;
+
+    content.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+
+</script>
 
 </body>
 </html>
