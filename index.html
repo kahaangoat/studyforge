@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyForge - Study Smarter</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #252c45;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #7c6cff;
+        }
+
+        nav a {
+            color: #c8cce0;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 90px 20px 70px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #7c6cff;
+        }
+
+        .hero p {
+            color: #aeb5ce;
+            font-size: 19px;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .buttons {
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .primary {
+            background: #7c6cff;
+            color: white;
+        }
+
+        .secondary {
+            border: 1px solid #39415f;
+            color: white;
+        }
+
+        .section {
+            padding: 60px 8%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #131a30;
+            border: 1px solid #252c45;
+            padding: 30px;
+            border-radius: 16px;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #7c6cff;
+        }
+
+        .icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #aeb5ce;
+        }
+
+        .subjects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .subject {
+            background: #131a30;
+            border: 1px solid #252c45;
+            padding: 12px 20px;
+            border-radius: 30px;
+            color: #d8dcf0;
+        }
+
+        .cta {
+            text-align: center;
+            background: #131a30;
+            border-radius: 20px;
+            padding: 50px 20px;
+            margin-top: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px;
+            color: #777f9c;
+            border-top: 1px solid #252c45;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 800px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Study<span>Forge</span></div>
+
+    <nav>
+        <a href="#features">Features</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#start">Get Started</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Study <span>smarter.</span><br>Prepare better.</h1>
+
+    <p>
+        Free study tools designed to help students practise,
+        revise and prepare for exams without the stress.
+    </p>
+
+    <div class="buttons">
+        <a class="btn primary" href="#features">Explore Tools</a>
+        <a class="btn secondary" href="#subjects">View Subjects</a>
+    </div>
+</section>
+
+<section class="section" id="features">
+
+    <h2>Everything you need to study better</h2>
+
+    <div class="features">
+
+        <div class="card">
+            <div class="icon">📝</div>
+            <h3>Practice Quizzes</h3>
+            <p>
+                Test yourself with topic-based questions
+                and see your score instantly.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📅</div>
+            <h3>Exam Countdown</h3>
+            <p>
+                Keep track of your upcoming exams and
+                know exactly how much time you have left.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📚</div>
+            <h3>Study Planner</h3>
+            <p>
+                Organise your subjects and create a clear
+                revision plan for your exams.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="subjects">
+
+    <h2>Subjects</h2>
+
+    <div class="subjects">
+        <div class="subject">Mathematics</div>
+        <div class="subject">Business</div>
+        <div class="subject">English</div>
+        <div class="subject">Spanish</div>
+        <div class="subject">History</div>
+        <div class="subject">Environmental Management</div>
+        <div class="subject">Science</div>
+    </div>
+
+</section>
+
+<section class="section" id="start">
+
+    <div class="cta">
+
+        <h2>Ready to start studying?</h2>
+
+        <p style="color:#aeb5ce; margin:15px 0 25px;">
+            More free study tools are coming soon.
+        </p>
+
+        <a class="btn primary" href="#features">
+            Start Exploring
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 StudyForge · Free tools for students
+</footer>
+
+</body>
+</html>
